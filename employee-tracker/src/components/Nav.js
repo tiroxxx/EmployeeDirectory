@@ -3,8 +3,11 @@ import SearchBox from "./SearchBox"
 
 function Nav({ handleSearchChange }) {
     return (
-        <nav className="navbar navbar-light bg-light">
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+        <nav className="navbar narvbar-expand navbar-light bg-light">
+            <div className="narbar-collapse row" id="navbarNav"/>
+            <SearchBox handleSearchChange={handleSearchChange} />
         </nav>
     )
 }
+
+export default Nav;
