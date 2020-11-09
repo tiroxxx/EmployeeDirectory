@@ -21,15 +21,19 @@ class DataTable extends Component {
     searchEmployees = () => {
         API.getUsers()
             .then(res => {
-                console.log(res);
                 this.setState({ results: res.data.results });
             })
             .catch(err => console.log(err));
     }
 
-
-
-
+    sortByName = () => {
+        const employees = this.state.results
+        employees.sort((employee1, employee2) => {
+            if(employee1.name.first > employee2.name.first) return 1
+            else return -1
+        })
+        this.setState({ results: employees })
+    }
 
     render() {
         return (
@@ -37,7 +41,7 @@ class DataTable extends Component {
                 <thead>
                     <tr>
                         <th scope="col">Image</th>
-                        <th scope="col">Name</th>
+                        <th onClick={() => this.sortByName()} scope="col">Name</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Email</th>
                         <th scope="col">DOB</th>
@@ -57,7 +61,6 @@ class DataTable extends Component {
                     ))}
                 </tbody>
             </table>
-
         )
     }
 
