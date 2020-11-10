@@ -1,4 +1,5 @@
 import React from "react";
+import Moment from "moment"
 
 function DataBody({ image, firstName, lastName, phone, email, dob }) {
     return (
@@ -9,7 +10,7 @@ function DataBody({ image, firstName, lastName, phone, email, dob }) {
             <td>{firstName + " " + lastName}</td>
             <td>{phone}</td>
             <td>{email}</td>
-            <td>{dob}</td>
+            <td>{Moment(dob).format("MM/DD/YYYY")}</td>
         </tr>
     )
 }
