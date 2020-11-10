@@ -1,8 +1,8 @@
 import React from "react";
 
-function SearchBox({ handleSearchChange }) {
+function SearchBox({ handleInputChange }) {
     return (
-        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+        <input onChange={handleInputChange} className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
     )
 }
 
