@@ -24,7 +24,6 @@ class DataArea extends Component {
         this.setState({ searchedEmployees: foundEmployees });
     };
 
-
     searchEmployees = () => {
         API.getUsers()
             .then(res => {
